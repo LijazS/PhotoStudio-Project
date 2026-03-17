@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: haproxy-config
+data:
+  haproxy.cfg: |
+    global
+        log stdout format raw local0
+
+    defaults
+        log     global
+        mode    http
+        timeout connect 5000ms
+        timeout client  50000ms
+        timeout server  50000ms
+
+    frontend http-in
+        bind *:80
+        default_backend photo-service
+
+    backend photo-service
+        balance roundrobin
+        server photo1 photo-service:3000 check
