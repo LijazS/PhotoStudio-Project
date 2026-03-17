@@ -5,6 +5,4 @@ metadata:
 data:
   NODE_ENV: "production"
   PORT: "3000"
-  MONGODB_AUTH_URI: "mongodb://front-service:27017/artgallery"
-  MONGODB_FEEDBACK_URI: "mongodb://front-service:27017/artgallery"
-  MONGODB_URI: "mongodb://admin:password123@front-service:27017/artgallery?authSource=admin"
+  MONGODB_URI: "mongodb://mongo-user:mongo-pass@front-service:27017/artgallery?authSource=artgallery"
