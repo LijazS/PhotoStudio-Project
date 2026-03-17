@@ -32,3 +32,10 @@ spec:
                   key: MONGO_PASSWORD
             - name: MONGO_INITDB_DATABASE
               value: "artgallery"
+          volumeMounts:
+            - name: mongo-init-script
+              mountPath: /docker-entrypoint-initdb.d
+          volumes:
+            - name: mongo-init-script
+              configMap:
+                name: mongo-init-script

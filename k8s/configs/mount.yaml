@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongo-init-script
+data:
+  init.js: |
+    db = db.getSiblingDB('artgallery');
+    db.createUser({
+      user: "mongo-user",
+      pwd: "mongo-pass",
+      roles: [{ role: "readWrite", db: "artgallery" }]
+    });
