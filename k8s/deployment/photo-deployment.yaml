@@ -10,17 +10,17 @@ spec:
     matchLabels:
       app: photo-app
   template:
-  metadata:
-    name: photo-app
-    labels:
-      app: photo-app
-    containers:
-    - name: photo-container
-      image: lijazs/photo-app:v1.0.0
-      ports:
-        containerPort: 3000
-      envFrom:
-        - configMapRef:
-            name: photo-configmap
-        - secretRef:
-            name: photo-secret
+    metadata:
+      name: photo-app
+      labels:
+        app: photo-app
+      containers:
+      - name: photo-container
+        image: lijazs/photo-app:v1.0.0
+        ports:
+          containerPort: 3000
+        envFrom:
+          - configMapRef:
+              name: photo-configmap
+          - secretRef:
+              name: photo-secret
