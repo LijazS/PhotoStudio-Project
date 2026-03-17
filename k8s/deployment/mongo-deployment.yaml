@@ -35,7 +35,7 @@ spec:
           volumeMounts:
             - name: mongo-init-script
               mountPath: /docker-entrypoint-initdb.d
-          volumes:
-            - name: mongo-init-script
-              configMap:
-                name: mongo-init-script
+      volumes:   # ✅ Moved outside containers, under spec.template.spec
+        - name: mongo-init-script
+          configMap:
+            name: mongo-init-script
