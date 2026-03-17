@@ -5,8 +5,12 @@ metadata:
   name: config
 data:
   config: |
+    peers:
+    - peer-address: 10.0.1.169
+      peer-asn: 65001
+      my-asn: 65000
     address-pools:
-    - name: default
-      protocol: layer2
+    - name: private-vpc
+      protocol: bgp
       addresses:
       - 10.0.1.240-10.0.1.250
